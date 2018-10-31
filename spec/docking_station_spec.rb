@@ -14,9 +14,12 @@ describe DockingStation do
   end
 
   it 'docks a bike when requested' do
-
+    expect(subject).to respond_to(:dock_bike)
   end
 
+it 'checks if a bike has been docked' do
+    expect(subject.check_bike).to include(@bike)
+end
 
 
 end

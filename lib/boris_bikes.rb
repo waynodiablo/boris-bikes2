@@ -1,26 +1,36 @@
 class DockingStation
 
-  def dock_bike
-    p "docked"
+  attr_reader :bike
+
+  def initialize
+    @bike = []
+    #@docked_bikes = []
   end
 
+  def dock_bike(bike)
+    @bike << bike
+  end
 
   def release_bike
-    Bike.new
+    bike = Bike.new
+  end
+
+  def check_bike
+    @bike
   end
 
 
-  def return_bike
-    p "returned"
-  end
+
 
 end
-station = DockingStation.new
-station.dock_bike
-
 
 
 class Bike
+  #def initialize
+    #@name = name
+
+#  end
+
   def working?
     return 'working'
   end
