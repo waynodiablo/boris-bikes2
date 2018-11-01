@@ -25,6 +25,6 @@ class Bike
   end
 
   def working?
-    return 'working'
+    return true
   end
 end

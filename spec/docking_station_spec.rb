@@ -5,12 +5,12 @@ describe DockingStation do
 
   it 'gets a bike' do
     station = DockingStation.new
-    expect(station.release_bike).to be_an_instance_of(Bike)
+    expect(station.release_bike("bike1")).to be_an_instance_of(Bike)
   end
 
   it 'expects the bike to be working' do
-    bike = Bike.new
-    expect(bike.working?).to eq "working"
+    bike = Bike.new("bike1")
+    expect(bike.working?).to eq true
   end
 
   it 'docks a bike when requested' do
@@ -18,6 +18,8 @@ describe DockingStation do
   end
 
 it 'checks if a bike has been docked' do
+    bike = Bike.new("bike1")
+    subject.dock_bike(bike)
     expect(subject.check_bike).to include(bike)
 end
 
