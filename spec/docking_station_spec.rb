@@ -18,7 +18,7 @@ describe DockingStation do
   end
 
 it 'checks if a bike has been docked' do
-    expect(subject.check_bike).to include(@bike)
+    expect(subject.check_bike).to include(bike)
 end
 
 
